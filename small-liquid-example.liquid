@@ -1,0 +1,107 @@
+<div class="ec1-container">
+    <div class='ec1-text-container'>
+      <h2>Ut enim ad minim veniam laboris nisi?</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      <br><br>
+      <a href="{{ section.settings.ext1-button-url }}" class="btn" style="text-align: left;">Sed do eiusmod tempor</a>
+    </div>
+    <div class="ec1-img-container">
+      <video poster="{{ section.settings.video_poster }}"
+      id="Mp4Video-{{ section.id }}"
+      class="video-div"
+      data-type="mp4"
+      src="{{ section.settings.video_url }}"
+      controls="true" height="400"></video>
+    </div>
+  </div>
+  {% schema %}
+  {
+    "name": "Ec Image With Text1",
+    "settings": [
+      {
+        "type": "url",
+        "label": "Link URL",
+        "id": "ext1-button-url"
+      },
+      {
+        "type": "text",
+        "label": "Video URL",
+        "id": "video_url"
+      },
+      {
+        "type": "text",
+        "label": "Video Poster",
+        "id": "video_poster",
+        "default": "https://cdn.shopify.com/s/files/1/0503/2601/2056/files/QpproLJ4_Copy_2.jpg?v=1645481837"
+      }
+    ]
+  }
+  {% endschema %}
+  <style>
+    .ec1-container{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      max-width: 1150px;
+      height: 600px;
+      margin: 0 auto;
+    }
+  
+    .ec1-text-container {
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+      justify-content: center;
+      padding-left: 5%;
+    }
+  
+    .ec1-text-container > h2,.ec1-text-container > p {
+      width: 70%;
+      text-align: left;
+    }
+    .ec1-text-container > h2{
+      font-size: 2.1rem;
+    }
+    .ec1-text-container > btn {
+      text-align: left;
+    }
+    .ec1-img-container{
+   
+      width: 40%;
+      display: flex;
+      align-items: start;
+      justify-content: flex-end;
+  
+    }
+    .ec1-img-container > img {
+      width: 70%;
+     
+    }
+    @media only screen and (max-width: 768px){
+      .ec1-container {
+        display: flex; 
+        flex-direction: column;
+        height: auto;
+      }
+      .ec1-text-container > h2, .ec1-text-container > p {
+          width: 100%;
+          text-align: left;
+      }
+      .ec1-text-container {
+          width: 100%;
+          padding: 5% 5% 20%;
+          order: 2;
+          height: auto;
+      }
+      .ec1-img-container {
+          width: 100%;
+          display: block;
+          order:1;
+      }
+      .ec1-img-container > img {
+          width: 100%;
+          padding: 5% 5% 0;
+      }
+    }
+  </style>
